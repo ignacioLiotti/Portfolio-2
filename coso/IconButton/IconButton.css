@@ -1,0 +1,109 @@
+.primary{
+  --bg-color: var(--color-secondary-default);
+  --hover-color: var(--color-secondary-dark);
+  --active-color: var(--color-secondary-default);
+  --icon-color: var(--text-color-lightest);
+}
+
+.primary.disabled{
+  --bg-color: var(--cta-color-disabled);
+}
+
+.primary[disabled]{
+  --bg-color: var(--cta-color-disabled);
+}
+
+.secondary{
+  --bg-color: var(--color-secondary-lightest);
+  --hover-color: var(--color-secondary-lightest);
+  --active-color: var(--color-secondary-lighter);
+  --border-color: var(--border-color-default);
+  --icon-color: var(--text-color-information);
+}
+
+.secondary.disabled{
+  --border-color: var(--cta-color-disabled);
+  --icon-color: var(--text-color-disabled);
+}
+
+.secondary[disabled]{
+  --border-color: var(--cta-color-disabled);
+  --icon-color: var(--text-color-disabled);
+}
+
+
+.tertiary{
+  --bg-color: transparent;
+  --hover-color: var(--background-color-dark);
+  --active-color: var(--surface-color-light);
+  --icon-color: var(--text-color-lighter);
+
+}
+
+.transparent{
+  --bg-color: transparent;
+  --hover-color: var(--opacity-20);
+  --active-color: var(--opacity-30);
+  --icon-color: var(--text-color-lightest);
+}
+
+.tertiary.disabled, .transparent.disabled{
+  --icon-color: var(--text-color-disabled);
+}
+
+.tertiary[disabled], .transparent[disabled]{
+  --icon-color: var(--text-color-disabled);
+}
+
+.small{
+  --size : 32px;
+  --padding : 8px;
+}
+
+.default{
+  --size : 40px;
+  --padding : 10px;
+}
+
+.iconButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  
+  width: var(--size);
+  height: var(--size);
+  padding: var(--padding);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--icon-color);
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.iconButton.disabled{
+  pointer-events: none;
+}
+
+.iconButton[disabled]{
+  pointer-events: none;
+}
+
+.iconButton:has(> :nth-child(2)){
+  width: calc(var(--size) + 16px);
+}
+
+.iconButton:hover{
+  background-color: var(--hover-color);
+}
+
+.iconButton:active{
+  background-color: var(--active-color);
+}
+
+.iconButton:focus-visible {
+  outline: 3px solid #694CC0;
+}

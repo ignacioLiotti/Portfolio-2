@@ -1,0 +1,136 @@
+.MenubarRoot {
+  display: flex;
+  gap: 3px;
+  border: 1px solid #c1d7ff5e;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.MenubarTrigger {
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--opacity-20);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+  color: #ffffff;
+}
+
+.MenubarTrigger:hover {
+  background-color: var(--opacity-20);
+}
+
+.MenubarContent {
+  background-color: var(--opacity-20);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  color: #ffffff;
+}
+
+.MenubarItem {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 3px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s ease-in-out;
+  color: #ffffff;
+}
+
+.MenubarItem:hover {
+  background-color: var(--opacity-20);
+}
+
+.RightSlot {
+  margin-left: auto;
+  color: #ffffff;
+}
+
+.MenubarSeparator {
+  border-bottom: 1px solid #eee;
+  margin: 8px 0;
+}
+
+.MenubarSubTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease-in-out;
+  color: #ffffff;
+  background-color: rgb(23, 23, 23);
+  border-radius: 4px;
+}
+
+.MenubarSubTrigger:hover {
+  background-color: var(--opacity-20);
+}
+
+.MenubarSubContent {
+  background-color: rgb(23, 23, 23);
+  border: 1px solid #eaeaea24;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 4px 6px;
+  color: #ffffff;
+}
+
+.MenubarCheckboxItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease-in-out;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.MenubarCheckboxItem:hover {
+  background-color: var(--opacity-20);
+}
+
+.MenubarItemIndicator {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  color: #ffffff;
+}
+
+.MenubarRadioItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.MenubarRadioItem:hover {
+  background-color: var(--opacity-20);
+}
+
+.inset {
+  position: relative;
+  padding-left: 32px;
+  color: #ffffff;
+}
+
+.MenubarItemIndicator {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+}

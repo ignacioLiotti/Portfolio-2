@@ -1,0 +1,33 @@
+.commandList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--opacity-20);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #181c25;
+}
+
+.command {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  user-select: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.command:hover {
+  background-color: var(--opacity-20);
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--opacity-20);
+}
+
+.active {
+  background-color: var(--primary-opaque-light);
+}

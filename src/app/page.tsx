@@ -1,91 +1,101 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+'use client';
 
-const inter = Inter({ subsets: ['latin'] })
+import Hero from '@/components/Sections/Hero/Hero';
+import React, { useState, useEffect, useRef } from 'react';
+import Navbar from '../components/molecules/NavBar/Navbar'
+import styles from './page.module.css';
+import Carousel from '@/components/atoms/Carrousel/Carrousel';
+import Grid, {GridItem} from '@/components/molecules/Grid/Grid';
+import { Parallax } from '@react-spring/parallax';
 
-export default function Home() {
+const Page = () => {
+  const [activeSection, setActiveSection] = useState('hero');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  };
+
+  const heroRef = useRef<HTMLElement | null>(null);
+  const infoRef = useRef<HTMLElement | null>(null);
+  const projectsRef = useRef<HTMLElement | null>(null);
+  const contactRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    if (heroRef.current) observer.observe(heroRef.current);
+    if (infoRef.current) observer.observe(infoRef.current);
+    if (projectsRef.current) observer.observe(projectsRef.current);
+    if (contactRef.current) observer.observe(contactRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const RedComponent: React.FC = ({num}) => (
+    <div style={{ width: '100%', height: '100%', backgroundColor: 'royalblue' }}>num</div>
+  );
+
+  const slides = Array.from({ length: 10 }, (i) => <RedComponent num={i} />);
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+      <Navbar activeSection={activeSection} />
+      <Hero forwardedRef={heroRef}/>
+      <section id="info" className={styles.info} ref={infoRef}>
+        <Carousel slides={slides} visibleSlides={8} />
+      </section>
+      <section id="section" ref={projectsRef}>
+        <Grid>
+          <GridItem colSpan={1} rowSpan={1}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>1</div>
+          </GridItem>
+          <GridItem colSpan={3} rowSpan={2}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>3</div>
+          </GridItem>
+          <GridItem colSpan={1} rowSpan={2}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>4</div>
+          </GridItem>
+          <GridItem colSpan={2} rowSpan={1}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>2</div>
+          </GridItem>
+          <GridItem colSpan={3} rowSpan={2}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>3</div>
+          </GridItem><GridItem colSpan={3} rowSpan={2}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>3</div>
+          </GridItem>
+          <GridItem colSpan={1} rowSpan={2}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>4</div>
+          </GridItem>
+          <GridItem colSpan={1} rowSpan={2}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>4</div>
+          </GridItem>
+          <GridItem colSpan={1} rowSpan={3}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>5</div>
+          </GridItem><GridItem colSpan={3} rowSpan={2}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>3</div>
+          </GridItem>
+          <GridItem colSpan={1} rowSpan={2}>
+            <div style={{ width: '100%', height: '100%', color: 'white' }}>4</div>
+          </GridItem>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        </Grid>
+      </section>
+      <section id="section" ref={contactRef}>
+        Contact Section
+      </section>
     </main>
-  )
-}
+  );
+};
+
+export default Page;

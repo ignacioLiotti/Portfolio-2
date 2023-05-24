@@ -1,0 +1,34 @@
+.light{
+  --background-color: var(--surface-color-lightest);
+  --text-color: var(--text-color-default);
+}
+
+.dark{
+  --background-color: var(--surface-color-darkest);
+  --text-color: var(--text-color-lightest);
+}
+
+.tooltip{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 2px 8px;
+  gap: 10px;
+  /* Surface/Darkest */
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 3px;
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.14));
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.arrow{
+  fill: var(--background-color) /* change to the desired color */
+}

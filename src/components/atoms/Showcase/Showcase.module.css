@@ -1,0 +1,17 @@
+.showcaseBackground{
+  background: linear-gradient(90deg,#090c11 10px,transparent 1%) 50%,linear-gradient(#090c11 10px,transparent 1%) 50%,#31354198;
+  background-size: 12px 12px;
+  padding: 18px;
+  border: #30374a 1px solid;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease 0.1s;
+}
+
+.showcaseBackground:hover{
+  border-color: #626e8f;
+}

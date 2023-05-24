@@ -1,0 +1,127 @@
+.primary{
+  --bg-image: var(--primary-background);
+  --border-color: var(--primary-gradient);
+  --hover-color: var(--primary-opaque);
+  --active-color: var(--primary-opaque-light);
+  --text-color: var(--primary-color);
+  --hover-text-color: var(--primary-color-light);
+}
+
+.secondary{
+  --bg-image: var(--secondary-background);
+  --border-color: var(--secondary-gradient);
+  --hover-color: var(--secondary-opaque);
+
+  --active-color: var(--secondary-opaque-light);
+  --text-color: var(--secondary-color);
+  --hover-text-color: var(--secondary-color-light);
+}
+
+.tertiary{
+  --bg-image: var(--tertiary-background);
+  --border-color: var(--tertiary-gradient);
+  --hover-color: var(--tertiary-opaque);
+  --active-color: var(--tertiary-opaque-light);
+  --text-color: var(--text-opaque-lightest);
+  --hover-text-color: var(--text-opaque-lightest);
+}
+
+.transparent{
+  --bg-color: transparent;
+  --hover-color: var(--opacity-20);
+  --active-color: var(--opacity-30);
+  --icon-color: var(--text-color-lightest);
+}
+
+.tertiary.disabled, .transparent.disabled{
+  --icon-color: var(--text-color-disabled);
+}
+
+.tertiary[disabled], .transparent[disabled]{
+  --icon-color: var(--text-color-disabled);
+}
+
+.smallest{
+  --size : 20px;
+  --padding : 5px;
+}
+
+.smaller{
+  --size : 26px;
+  --padding : 6px;
+}
+
+.small{
+  --size : 32px;
+  --padding : 8px;
+}
+
+.default{
+  --size : 40px;
+  --padding : 10px;
+}
+
+.large{
+  font-size: 16px;
+}
+
+
+.iconButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  
+  width: var(--size);
+  height: var(--size);
+  padding: var(--padding);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--icon-color);
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.iconButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9px;
+  padding: 2px;
+  background: var(--border-color);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.iconButton.disabled{
+  pointer-events: none;
+}
+
+.iconButton[disabled]{
+  pointer-events: none;
+}
+
+.iconButton:has(> :nth-child(2)){
+  width: calc(var(--size) + 16px);
+}
+
+.iconButton:hover{
+  background-color: var(--hover-color);
+}
+
+.iconButton:active{
+  background-color: var(--active-color);
+}
+
+.iconButton:focus-visible {
+  outline: 3px solid #694CC0;
+}

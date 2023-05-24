@@ -1,0 +1,75 @@
+/* MultiSelectListStyles.css */
+.multiSelect {
+  list-style-type: none;
+  padding: 0;
+  background-color: #181c25;
+  padding: 21px 34px;
+  border-radius: 8px;
+  border: 1px solid var(--opacity-20);
+}
+
+.multiSelect li {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkboxCheckmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color 0.2s 0.05s,;
+}
+
+.li:hover .checkboxCheckmark{
+  background-color: #2a3543;
+}
+
+.checkbox input:checked ~ .checkboxCheckmark {
+  background-color: var(--primary-opaque);
+}
+
+.checkboxCheckmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox input:checked ~ .checkboxCheckmark:after {
+  display: block;
+}
+
+.checkbox .checkboxCheckmark:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  transition: all 0.2s;
+}
+
+.label {
+  margin: 0;
+}

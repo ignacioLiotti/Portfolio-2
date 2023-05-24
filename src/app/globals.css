@@ -1,107 +1,342 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+#section{
+  height: 100vh;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
   box-sizing: border-box;
-  padding: 0;
+}
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-html,
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+  width: 100vw;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+*:focus-visible {
+  outline: 3px solid #694CC0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+:root {
+
+  --inner-gradient: linear-gradient(135deg,#2a3543,#2c3242);
+  --primary-color: hsl(266, 100%, 75%);
+  --primary-color-light: hsl(266deg, 100%, 95%);
+  --primary-opaque: hsl(266deg, 87%, 64%, 0.36);
+  --primary-opaque-dark: hsl(270, 23%, 21%);
+  --primary-opaque-light: hsl(266deg, 87%, 35%, 0.36);
+  --primary-gradient: linear-gradient(180deg,#8a71df,#332051);
+  --primary-background: radial-gradient(300% 287.82% at 50% 0%, rgb(172 113 223 / 46%) 0%, rgb(48 32 81 / 53%) 18.09%);
+  
+  --secondary-color: hsl(40, 100%, 62%);
+  --secondary-color-light: hsl(40, 92%, 66%);
+  --secondary-opaque: hsla(40, 99%, 53%, 0.247);
+  --secondary-opaque-dark: hsl(214, 23%, 21%);
+  --secondary-opaque-light: hsla(40, 97%, 65%, 0.247);
+  --secondary-gradient: linear-gradient(180deg,#cc8b69,#804b59);
+  --secondary-background: radial-gradient(300% 287.82% at 50% 0%, rgba(254, 174, 15, 0.594) 0%, rgba(168, 113, 64, 0.363) 18.09%);
+
+  --tertiary-color: hsl(0, 0%, 100%);
+  --tertiary-color-dark: hsl(252, 5%, 20%);
+  --tertiary-opaque: hsla(0, 0%, 100%, 0.183);
+  --tertiary-opaque-dark: hsl(214, 23%, 21%);
+  --tertiary-opaque-light: hsla(0, 0%, 57%, 0.105);
+  --tertiary-gradient: linear-gradient(180deg,#ffffff36,#1a1a1a);
+  --tertiary-background:radial-gradient(300% 287.82% at 50% 0%, rgb(255 255 255 / 17%) 0%, rgb(68 68 68 / 53%) 18.09%);
+
+
+  /* Primary */
+    --color-primary-dark: var(--palette-dark-blue-5);
+    --color-primary-default: var(--palette-dark-blue-4);
+    --color-primary-light: var(--palette-dark-blue-3);
+    --color-primary-lighter: var(--palette-dark-blue-2);
+    --color-primary-lightest: var(--palette-dark-blue-1);
+
+  /* Secondary */
+    --color-secondary-dark: var(--palette-blue-5);
+    --color-secondary-default: var(--palette-blue-4);
+    --color-secondary-light: var(--palette-blue-3);
+    --color-secondary-lighter: var(--palette-blue-2);
+    --color-secondary-lightest: var(--palette-blue-1);
+
+  /* Success */
+    --color-success-dark: var(--palette-green-5);
+    --color-success-default: var(--palette-green-4);
+    --color-success-light: var(--palette-green-3);
+    --color-success-lighter: var(--palette-green-2);
+    --color-success-lightest: var(--palette-green-1);
+
+  /* Error */
+    --color-error-dark: var(--palette-red-5);
+    --color-error-default: var(--palette-red-4);
+    --color-error-light: var(--palette-red-3);
+    --color-error-lighter: var(--palette-red-2);
+    --color-error-lightest: var(--palette-red-1);
+
+  /* Warning */
+    --color-warning-dark: var(--palette-yellow-5);
+    --color-warning-default: var(--palette-yellow-4);
+    --color-warning-light: var(--palette-yellow-3);
+    --color-warning-lighter: var(--palette-yellow-2);
+    --color-warning-lightest: var(--palette-yellow-1);
+
+  /* Info */
+    --color-info-dark: var(--palette-blue-5);
+    --color-info-default: var(--palette-blue-4);
+    --color-info-light: var(--palette-blue-3);
+    --color-info-lighter: var(--palette-blue-2);
+    --color-info-lightest: var(--palette-blue-1);
+
+  /* Highlight */
+    --color-highlight-dark: var(--palette-purple-5);
+    --color-highlight-default: var(--palette-purple-4);
+    --color-highlight-light: var(--palette-purple-3);
+    --color-highlight-lighter: var(--palette-purple-2);
+    --color-highlight-lightest: var(--palette-purple-1);
+
+  /* Background */
+    --background-color-darker: var(--palette-neutral-10);
+    --background-color-dark: var(--palette-neutral-2);
+    --background-color-default: var(--palette-neutral-1);
+
+  /* Surface */
+    --surface-color-darkest: var(--palette-neutral-12);
+    --surface-color-darker: var(--palette-neutral-11);
+    --surface-color-dark: var(--palette-neutral-8);
+    --surface-color-light: var(--palette-neutral-4);
+    --surface-color-lighter: var(--palette-neutral-2);
+    --surface-color-lightest: var(--palette-neutral-1);
+
+/* Case Coordination */
+    --brand-cc-dark: #016D69;
+    --brand-cc-default: #09827C;
+    --brand-cc-light: #32C8C3;
+    --brand-cc-lighter: #C8EEEC;
+    --brand-cc-lightest: #E1F4F3;
+
+/* Document Central */
+    --brand-dc-dark: #924509;
+    --brand-dc-default: #BB5200;
+    --brand-dc-light: #F69949;
+    --brand-dc-lighter: #FDE6D1;
+    --brand-dc-lightest: #FEF2E8;
+
+/* Data Stream */
+    --brand-ds-dark: #B93426;
+    --brand-ds-default: #EA7772;
+    --brand-ds-light: #FC9D98;
+    --brand-ds-lighter: #FFCFD2;
+    --brand-ds-lightest: #FFECEE;
+
+/* eChart */
+    --brand-ec-dark: #001DB0;
+    --brand-ec-default: #5547E3;
+    --brand-ec-light: #978FE3;
+    --brand-ec-lighter: #DDDAF9;
+    --brand-ec-lightest: #EEEDFC;
+
+/* Home */
+    --brand-home-dark: var(--palette-dark-blue-5);
+    --brand-home-default: var(--palette-dark-blue-4);
+    --brand-home-light: var(--palette-dark-blue-3);
+    --brand-home-lighter: var(--palette-dark-blue-2);
+    --brand-home-lightest: var(--palette-dark-blue-1);
+
+/* Insight */
+    --brand-in-dark: #566A80;
+    --brand-in-default: #617893;
+    --brand-in-light: #9CACBE;
+    --brand-in-lighter: #E2E6EB;
+    --brand-in-lightest: #EEF0F3;
+
+/* Patient Engagement */
+    --brand-pe-dark: #62001F;
+    --brand-pe-default: #961446;
+    --brand-pe-light: #CF7C92;
+    --brand-pe-lighter: #EAD0DA;
+    --brand-pe-lightest: #F5E8ED;
+
+  /* Practice Management */
+    --brand-pm-dark: #004A98;
+    --brand-pm-default: #0075C9;
+    --brand-pm-light: #3BA1E9;
+    --brand-pm-lighter: #DAECF9;
+    --brand-pm-lightest: #EBF7FF;
+
+  /* Price Transparency */
+    --brand-pt-dark: #00647F;
+    --brand-pt-default: #06819A;
+    --brand-pt-light: #2BADC8;
+    --brand-pt-lighter: #ADDEEF;
+    --brand-pt-lightest: #E7F8FF;
+
+/* Brand Gradients */
+    --brand-cc-gradient: linear-gradient(66.62deg, --brand-cc-default 1.9%, --brand-cc-light 100%);
+    --brand-ds-gradient: linear-gradient(45deg, --brand-ds-default 0%, --brand-ds-light 100%);
+    --brand-dc-gradient: linear-gradient(45deg, --brand-dc-default 0%, --brand-dc-light 100%);
+    --brand-ec-gradient: linear-gradient(45deg, --brand-ec-default 0%, --brand-ec-light 100%);
+    --brand-home-gradient: linear-gradient(45.34deg, --brand-home-default 15.33%, --brand-home-light 84.65%);
+    --brand-in-gradient: linear-gradient(45deg, --brand-in-default 0%, --brand-in-light 100%);
+    --brand-pe-gradient: linear-gradient(45.34deg, --brand-pe-dfault 0%, --brand-pe-light 100%);
+    --brand-pm-gradient: linear-gradient(44.26deg, --brand-pm-default 0%, --brand-pm-light 90.36%);
+    --brand-pt-gradient: linear-gradient(66.62deg, --brand-pt-default 1.9%, --brand-pt-light 100%);
+    --brand-sb-gradient: linear-gradient(40deg, #5547E3 14.51%, #534DE2 24.46%, #4E5DDE 37.25%, #4678D8 51.46%, #3A9ED0 67.09%, #2FC0C9 79.17%);
+
+  /* Text colors */
+    --text-color-default: var(--palette-neutral-12);
+    --text-color-light: var(--palette-neutral-9);
+    --text-color-lighter: var(--palette-neutral-8);
+    --text-color-lightest: var(--palette-neutral-1);
+    --text-color-disabled: var(--palette-neutral-6);
+    --text-color-success: var(--palette-green-5);
+    --text-color-error: var(--palette-red-5);
+    --text-color-highlight: var(--palette-purple-5);
+    --text-color-information: var(--palette-blue-4);
+    --text-color-label: var(--palette-dark-blue-5);
+    --text-color-hyperlink: var(--palette-blue-4);
+
+  /* CTA colors */
+    --cta-text-color-dark: var(--palette-neutral-9);
+    --cta-text-color-default: var(--palette-blue-5);
+    --cta-text-color-light: var(--palette-blue-4);
+    --cta-color-lightest: var(--palette-neutral-1);;
+    --cta-color-disabled: var(--palette-neutral-6);
+
+  /* Border */
+    --border-color-dark: var(--palette-neutral-8);
+    --border-color-default: var(--palette-neutral-6);
+    --border-color-light: var(--palette-neutral-4);
+    --border-color-lighter: var(--palette-neutral-2);
+    --border-color-focus: var(--palette-purple-4);
+    --border-color-error: var(--palette-red-3);
+    --border-color-success: var(--palette-green-3);
+    --border-color-highlight: var(--palette-purple-3);
+    --border-color-cta-default: var(--palette-blue-1);
+    --border-color-cta-dark: var(--palette-blue-2);
+
+  /* Opacity */
+    --opacity-5:   hsla(0, 0%, 100%, 0.05);
+    --opacity-10:  hsla(0, 0%, 100%, 0.10);
+    --opacity-15:  hsla(0, 0%, 100%, 0.15);
+    --opacity-20:  hsla(0, 0%, 100%, 0.20);
+    --opacity-30:  hsla(0, 0%, 100%, 0.30);
+    --opacity-40:  hsla(0, 0%, 100%, 0.40);
+    --opacity-50:  hsla(0, 0%, 100%, 0.50);
+    --opacity-75:  hsla(0, 0%, 100%, 0.75);
+
+  /* Palette */      
+
+        /* You should never use the pallet variables directly. If in the future we need to change the text error color from a shade of red to a shade of yellow, 
+          then we would need to change every instance of the pallete color selected.
+          
+          But with this variable declaration in place, we can simply replace:
+
+          --text-color-error: var(--palette-red-5);
+
+           to:
+    
+          --text-color-error: var(--palette-yellow-4);
+        
+        and the change will be made across every single component in your application.
+        */
+        
+         
+    --palette-dark-blue-1: #E6E9EF;
+    --palette-dark-blue-2: #BFC7D9;
+    --palette-dark-blue-3: #8C9EC4;
+    --palette-dark-blue-4: #2C457A;
+    --palette-dark-blue-5: #1D3363;
+
+    --palette-blue-1: #DBEEFF;
+    --palette-blue-2: #B2D7FD;
+    --palette-blue-3: #5FAAF4;
+    --palette-blue-4: #026BD3;
+    --palette-blue-5: #0054A8;
+
+    --palette-green-1: #ECF4EE;
+    --palette-green-2: #C3E6CD;
+    --palette-green-3: #91D4A8;
+    --palette-green-4: #108548;
+    --palette-green-5: #20643D;
+
+    --palette-red-1: #FCF1EF;
+    --palette-red-2: #FDD4CD;
+    --palette-red-3: #FCB5AA;
+    --palette-red-4: #DD2B0E;
+    --palette-red-5: #BA1A00;
+
+    --palette-yellow-1: #FFF9E5;
+    --palette-yellow-2: #FFEBA2;
+    --palette-yellow-3: #FFDF6C;
+    --palette-yellow-4: #FFCD17;
+    --palette-yellow-5: #E7A600;
+
+    --palette-purple-1: #F4F0FF;
+    --palette-purple-2: #E1D8F9;
+    --palette-purple-3: #CBBBF2;
+    --palette-purple-4: #7B58CF;
+    --palette-purple-5: #694CC0;
+
+    --palette-neutral-1: #FFFFFF;
+    --palette-neutral-2: #F6F6F6;
+    --palette-neutral-3: #EEEEEE;
+    --palette-neutral-4: #E4E4E4;
+    --palette-neutral-5: #D2D2D2;
+    --palette-neutral-6: #C0C0C0;
+    --palette-neutral-7: #AEAEAE;
+    --palette-neutral-8: #767676;
+    --palette-neutral-9: #646464;
+    --palette-neutral-10: #5D5D5D;
+    --palette-neutral-11: #474747;
+    --palette-neutral-12: #2B2B2B;
+
 }

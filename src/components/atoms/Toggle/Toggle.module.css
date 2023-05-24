@@ -1,0 +1,105 @@
+/* ToggleButtonStyles.css */
+.small{
+  --height: 17px;
+  --width: 30px;
+  --border-radius: 15px;
+  --toggle-circle-size: 13px;
+  --toggle-circle-offset: 2px;
+  --toggle-circle-left: 15px;
+}
+
+.default{
+  --height: 25px;
+  --width: 50px;
+  --border-radius: 20px;
+  --toggle-circle-size: 21px;
+  --toggle-circle-offset: 2px;
+  --toggle-circle-left: 25px;
+}
+
+.large{
+  --height: 30px;
+  --width: 60px;
+  --border-radius: 25px;
+  --toggle-circle-size: 25px;
+  --toggle-circle-offset: 3px;
+  --toggle-circle-left: 30px;
+}
+
+.primary{
+  --bg-image: var(--primary-background);
+  --border-color: var(--primary-gradient);
+  --hover-color: var(--primary-opaque);
+  --inactive-color: var(--primary-opaque-light);
+  --text-color: var(--primary-color);
+  --hover-text-color: var(--primary-color-light);
+}
+
+.secondary{
+  --bg-image: var(--secondary-background);
+  --border-color: var(--secondary-gradient);
+  --hover-color: var(--secondary-opaque);
+
+  --inactive-color: var(--secondary-opaque-light);
+  --text-color: var(--secondary-color);
+  --hover-text-color: var(--secondary-color-light);
+}
+
+.tertiary{
+  --bg-image: var(--tertiary-background);
+  --border-color: var(--tertiary-gradient);
+  --hover-color: var(--tertiary-opaque);
+  --inactive-color: var(--tertiary-opaque-light);
+  --text-color: var(--text-opaque-lightest);
+  --hover-text-color: var(--text-opaque-lightest);
+}
+
+
+.toggle {
+  display: inline-block;
+  background-color: var(--inactive-color);
+  outline: 1px solid var(--tertiary-opaque);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  transition: background-color 0.3s;
+}
+
+.toggle.active {
+  background-color: var(--hover-color);
+}
+
+.toggleCircle {
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: var(--toggle-circle-offset);
+  left: 2px;
+  width: var(--toggle-circle-size);
+  height: var(--toggle-circle-size);
+  transition: left 0.3s;
+}
+
+.toggle.active .toggleCircle {
+  left: var(--toggle-circle-left);
+}
+
+.toggleLabel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.toggleContainer{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  height: 100%;
+}

@@ -1,0 +1,135 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.textLabel {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/**
+ * type
+ */
+.label {
+  padding-inline: 8px;
+  padding-block: 2px;
+}
+
+.iconLabel {
+  padding-inline: 8px;
+  padding-block: 2px;
+}
+
+.noBackground {
+  padding-inline: 8px;
+  padding-block: 2px;
+  background-color: transparent !important;
+}
+
+.icon {
+  padding: 4px;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+}
+
+/**
+ * shape
+ */
+.circle {
+  border-radius: 30px;
+}
+
+.square {
+  border-radius: 2px;
+}
+
+/**
+ * color, value
+ */
+/* default */
+.default.light {
+  color: var(--text-color-label);
+  background-color: var(--color-primary-lightest);
+}
+.default.dark {
+  color: var(--text-color-lightest);
+  background-color: var(--brand-home-default);
+}
+
+/* info */
+.info.light {
+  color: var(--cta-text-color-default);
+  background-color: var(--color-secondary-lighter);
+}
+.info.dark {
+  color: var(--text-color-lightest);
+  background-color: var(--color-info-default);
+}
+
+/* success */
+.success.light {
+  color: var(--text-color-success);
+  background-color: var(--color-success-lighter);
+}
+.success.dark {
+  color: var(--text-color-lightest);
+  background-color: var(--color-success-default);
+}
+
+/* warning */
+.warning.light {
+  color: var(--text-color-default);
+  background-color: var(--color-warning-lighter);
+}
+.warning.dark {
+  color: var(--text-color-default);
+  background-color: var(--color-warning-default);
+}
+
+/* error */
+.error.light {
+  color: var(--text-color-error);
+  background-color: var(--color-error-lighter);
+}
+.error.dark {
+  color: var(--text-color-lightest);
+  background-color: var(--color-error-default);
+}
+
+/**
+ * icon
+ */
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconWithLabel {
+  padding-right: 6px;
+}
+
+/**
+ * size
+ */
+.xSmall {
+  font-size: 10px;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 14px;
+}
+
+.large {
+  font-size: 16px;
+}

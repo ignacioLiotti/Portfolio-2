@@ -1,0 +1,125 @@
+.CDS-default.CDS-dark{
+  --bg-color: hsl(265, 100%, 50%) ;
+  --text-color: hsl(0, 0%, 100%);
+  --border-color: hsl(266, 100%, 50%);
+}
+
+.CDS-default.CDS-light{
+  --bg-color: hsl(265, 100%, 90%) ;
+  --text-color: hsl(266, 100%, 50%);
+  --border-color: hsl(266, 100%, 75%);
+}
+
+.CDS-default.CDS-transparent{
+  --bg-color: hsla(266, 100%, 51%, 0.158) ;
+  --text-color: hsl(266, 100%, 92%);
+  --border-color: hsl(266, 100%, 51%);
+}
+
+.CDS-info.CDS-dark {
+  --bg-color: hsl(210, 100%, 50%);
+  --text-color: hsl(0, 0%, 100%);
+  --border-color: hsl(210, 100%, 50%);
+}
+
+.CDS-info.CDS-light {
+  --bg-color: hsl(210, 100%, 90%);
+  --text-color: hsl(210, 100%, 50%);
+  --border-color: hsl(210, 100%, 75%);
+}
+
+.CDS-info.CDS-transparent {
+  --bg-color: hsla(210, 100%, 50%,0.158);
+  --text-color: hsl(210, 100%, 50%);
+  --border-color: hsl(210, 100%, 75%);
+}
+
+.CDS-success.CDS-dark {
+  --bg-color: hsl(120, 100%, 25%);
+  --text-color: hsl(0, 0%, 100%);
+  --border-color: hsl(120, 100%, 25%);
+}
+
+.CDS-success.CDS-light {
+  --bg-color: hsl(120, 100%, 90%);
+  --text-color: hsl(120, 100%, 25%);
+  --border-color: hsl(120, 100%, 75%);
+}
+
+.CDS-success.CDS-transparent {
+  --bg-color: hsla(120, 100%, 25%, 0.158);
+  --text-color: hsl(120, 100%, 25%);
+  --border-color: hsl(120, 100%, 75%);
+}
+
+.CDS-warning.CDS-dark {
+  --bg-color: hsl(45, 100%, 50%);
+  --text-color: hsl(0, 0%, 0%);
+  --border-color: hsl(45, 100%, 50%);
+}
+
+.CDS-warning.CDS-light {
+  --bg-color: hsl(45, 100%, 90%);
+  --text-color: hsl(45, 100%, 50%);
+  --border-color: hsl(45, 100%, 75%);
+}
+
+.CDS-warning.CDS-transparent {
+  --bg-color: hsla(45, 100%, 50%, 0.158);
+  --text-color: hsl(45, 100%, 50%);
+  --border-color: hsl(45, 100%, 75%);
+}
+
+.CDS-error.CDS-dark {
+  --bg-color: hsl(0, 100%, 50%);
+  --text-color: hsl(0, 0%, 100%);
+  --border-color: hsl(0, 100%, 50%);
+}
+
+.CDS-error.CDS-light {
+  --bg-color: hsl(0, 100%, 90%);
+  --text-color: hsl(0, 100%, 50%);
+  --border-color: hsl(0, 100%, 75%);
+}
+
+.CDS-error.CDS-transparent {
+  --bg-color: hsla(0, 100%, 50%, 0.158);
+  --text-color: hsl(0, 100%, 50%);
+  --border-color: hsl(0, 100%, 75%);
+}
+
+.CDS-white {
+  --bg-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 100%);
+  --border-color: hsl(0, 0%, 15%);
+}
+
+.CDS-Alert{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 40px;
+  padding: 0 16px;
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: var(--font-size);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  text-decoration: none;
+  word-break: break-word;
+  line-height: 28px;
+  transition: all 0.2s ease-in-out;
+}
+
+.CDS-icon{
+  width: 14px;
+  height: 14px;
+  display: inline-table;
+}
+
+.CDS-content{
+  flex: 1;
+}

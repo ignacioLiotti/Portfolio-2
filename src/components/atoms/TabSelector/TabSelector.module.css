@@ -1,0 +1,44 @@
+/* TabSelectorStyles.css */
+.tabSelector {
+  display: flex;
+  flex-direction: row; 
+  gap: 10px;
+
+  max-height: 40px;
+  position: relative;
+}
+
+.tabOption {
+  cursor: pointer;
+  padding: 8px 16px;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  max-height: 40px;
+  transition: transform 0.1s;
+}
+
+.tabOption:active ~ .tabAfter {
+  transform: scale(0.95);
+}
+
+.tabOption:active {
+  transform: scale(0.95);
+}
+
+.tabAfter {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  max-height: 40px;
+  background-color: var(--tertiary-opaque);
+  border-radius: 5px;
+  transition: left 0.3s, width 0.3s, transform 0.1s;
+  pointer-events: none;
+}
+
+
+.tabOption.selected{
+  border: 1px solid var(--tertiary-opaque);
+}

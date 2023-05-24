@@ -1,0 +1,206 @@
+.primary{
+  --bg-image: var(--primary-background);
+  --border-color: var(--primary-gradient);
+  --hover-color: var(--primary-opaque);
+  --active-color: var(--primary-opaque-light);
+  --text-color: var(--primary-color-light);
+  --hover-text-color: var(--primary-color-light);
+}
+
+.secondary{
+  --bg-image: var(--secondary-background);
+  --border-color: var(--secondary-gradient);
+  --hover-color: var(--secondary-opaque);
+
+  --active-color: var(--secondary-opaque-light);
+  --text-color: var(--secondary-color);
+  --hover-text-color: var(--secondary-color-light);
+}
+
+.tertiary{
+  --bg-image: var(--tertiary-background);
+  --border-color: var(--tertiary-gradient);
+  --hover-color: var(--tertiary-opaque);
+  --active-color: var(--tertiary-opaque-light);
+  --text-color: var(--text-opaque-lightest);
+  --hover-text-color: var(--text-opaque-lightest);
+}
+
+
+.primary[disabled],.secondary[disabled],.tertiary[disabled]{
+  --text-color: var(--text-color-disabled);
+}
+
+.transparent[disabled], .transparent.disabled{
+  --text-color: var(--opacity-40);
+}
+
+.transparent{
+  --bg-color: transparent;
+  --hover-color: var(--opacity-20);
+  --active-color: var(--opacity-30);
+  --text-color: var(--text-color-lightest);
+  --hover-text-color: var(--text-color-lightest);
+}
+
+.selection{
+  --bg-color: transparent;
+  border-radius: 0px!important;
+  --hover-color: var(--opacity-20);
+  --active-color: var(--opacity-30);
+  --text-color: var(--text-color-lightest);
+  --hover-text-color: var(--text-color-lightest);
+}
+
+.small{
+  --size : 32px;
+  --font-size: 14px;
+}
+
+.default{
+  --size : 40px;
+  --font-size: 16px;
+}
+
+.large{
+  font-size: 16px;
+}
+
+.active{
+  --bg-color: var(--color-secondary-dark);
+  --hover-color: var(--color-secondary-darkest);
+  --active-color: var(--color-secondary-dark);
+  --text-color: var(--text-color-lightest);
+  --hover-text-color: var(--text-color-lightest);
+}
+
+
+.Button{
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
+  height: var(--size);
+  padding: 0 16px;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: var(--font-size);
+  background-image: var(--bg-image);
+  background-color: transparent;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  overflow: hidden;
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, scale 0.3s ease-out;
+}
+
+.Button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: var(--border-color);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.grow{
+  flex-grow: 1;
+  width: 100%;
+}
+
+.Button.disabled{
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.Button[disabled]{
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.Button:has(svg){
+  /* width: calc(var(--size) + 16px); */
+}
+
+.Button:hover{
+  background-color: var(--hover-color);
+  color: var(--hover-text-color);
+}
+
+.Button:active{
+  background-color: var(--active-color);
+}
+
+.Button:active{
+  transform: scale(0.97);
+}
+
+.Button:focus-visible {
+  outline: 3px solid #694CC0;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: slide-in 0.3s ease forwards;
+}
+
+.dropWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: slide-in-2 0.3s ease forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.listItem{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 44px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  }

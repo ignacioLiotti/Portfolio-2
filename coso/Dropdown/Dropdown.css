@@ -1,0 +1,209 @@
+.none{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent!important;
+  border: none;
+  outline: none;
+    /* make the cursor affect the child component  */
+  pointer-events: none;
+}
+
+.dropdownContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 230px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: var(--surface-color-lighter);
+  border: 1px solid var(--surface-color-light);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-color-default);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dropdownContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdownContent::-webkit-scrollbar-track {
+  background: var(--surface-color-lighter);
+}
+
+.dropdownContent::-webkit-scrollbar-thumb {
+  background: var(--surface-color-light);
+  border-radius: 4px;
+}
+
+.dropdownContent::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-color-light);
+}
+
+.dropdownContent::-webkit-scrollbar-thumb:active {
+  background: var(--surface-color-light);
+}
+
+.dropdownContent::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--surface-color-light);
+}
+
+.dropdownContent::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+}
+
+.dropdownContent::-webkit-scrollbar-thumb:horizontal {
+  width: 50px;
+}
+
+.dropdownContent::-webkit-scrollbar-button {
+  display: none;
+}
+
+.dropdownContent::-webkit-scrollbar-corner {
+  background: var(--surface-color-lighter);
+}
+
+.dropdownContent::-webkit-resizer {
+  background: var(--surface-color-lighter);
+}
+
+.dropdownItem{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dropdownItem:hover{
+  background-color: var(--surface-color-light);
+}
+
+.dropdownItem:active{
+  background-color: var(--surface-color-light);
+}
+
+.dropdownItem:focus{
+  outline: none;
+}
+
+.dropdownItem:disabled{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:focus{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:focus{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:focus{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:focus{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:focus{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:focus{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:focus{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:focus{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:hover{
+  background-color: transparent;
+}
+
+.dropdownItem:disabled:active{
+  background-color: transparent;
+}
